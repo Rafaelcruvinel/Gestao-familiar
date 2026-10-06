@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#173f35">
+<title>Combinado — Família</title>
+<style>
+:root{--green:#173f35;--green2:#245b4b;--lime:#d7f36a;--paper:#f5f6f1;--ink:#18231f;--muted:#68756f;--line:#e0e6df;--white:#fff;--red:#b43d3d;--amber:#9b6414}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:14px;padding:12px 15px;font-weight:700;background:var(--green);color:#fff}button.secondary{background:#e8eee8;color:var(--green)}button.light{background:var(--lime);color:var(--green)}button.danger{background:#f9e7e5;color:var(--red)}button:disabled{opacity:.45;cursor:not-allowed}.shell{max-width:1000px;margin:auto;min-height:100dvh}.top{background:var(--green);color:white;padding:20px 20px 26px;border-radius:0 0 26px 26px}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:900;letter-spacing:.2px;font-size:20px}.brand span{color:var(--lime)}.eyebrow{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;opacity:.75}.top h1{font-size:28px;line-height:1.1;margin:22px 0 8px}.top p{margin:0;color:#dce7e0}.content{padding:18px;max-width:1000px;margin:auto}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:17px;box-shadow:0 3px 12px #153d3010}.card h2,.card h3{margin:0 0 10px}.card h2{font-size:18px}.card h3{font-size:15px}.muted{color:var(--muted)}.small{font-size:13px}.stat{font-size:32px;font-weight:850;letter-spacing:-1px}.statlabel{font-size:13px;color:var(--muted)}.pill{display:inline-flex;align-items:center;border-radius:999px;padding:5px 10px;background:#edf2ec;color:var(--green);font-size:12px;font-weight:800}.pill.warn{background:#fff2d8;color:var(--amber)}.pill.red{background:#fae6e4;color:var(--red)}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.stack{display:flex;flex-direction:column;gap:12px}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.actions button{flex:1}.timer{font-size:clamp(42px,9vw,64px);font-weight:900;letter-spacing:-2px;text-align:center;margin:12px 0 2px;font-variant-numeric:tabular-nums}.progress{height:9px;background:#e7ece6;border-radius:9px;overflow:hidden;margin:14px 0}.progress div{height:100%;background:var(--green2);width:0%;transition:width .2s}.nav{display:flex;gap:8px;overflow:auto;padding:0 18px 4px;margin-top:14px}.nav button{white-space:nowrap;background:transparent;color:#dce7e0;border:1px solid #ffffff35;padding:9px 12px}.nav button.active{background:var(--lime);color:var(--green);border-color:var(--lime)}.task{display:flex;gap:10px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}.task:last-child{border-bottom:0}.task input[type=checkbox]{width:20px;height:20px;accent-color:var(--green);margin-top:3px}.taskmain{flex:1}.tasktitle{font-weight:750}.taskmeta{font-size:12px;color:var(--muted);margin-top:3px}.field{display:flex;flex-direction:column;gap:6px;margin:10px 0}.field label{font-size:13px;font-weight:750}.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #d6dfd6;border-radius:12px;background:#fff;color:var(--ink)}.field textarea{min-height:120px;resize:vertical}.notice{padding:12px 14px;border-radius:14px;background:#f0f5d9;color:#36451b;font-size:13px}.notice.red{background:#fae7e4;color:#8f3030}.login{max-width:430px;margin:6vh auto;padding:18px}.login .card{padding:24px}.hidden{display:none!important}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:20px 0 10px}.sectionhead h2{font-size:18px;margin:0}.listitem{padding:12px 0;border-bottom:1px solid var(--line)}.listitem:last-child{border-bottom:0}.foot{text-align:center;padding:22px;color:var(--muted);font-size:12px}.balance{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.balance>div{background:#f3f6f0;border-radius:14px;padding:12px}.balance .stat{font-size:24px}.tiny{font-size:11px;color:var(--muted)}@media(max-width:650px){.grid{grid-template-columns:1fr}.top{padding:18px 18px 20px}.top h1{font-size:25px}.content{padding:14px}.balance{grid-template-columns:1fr 1fr}.balance>div:last-child{grid-column:1/-1}.login{margin:2vh auto}.row.mobile-stack{align-items:flex-start;flex-direction:column}.row.mobile-stack button{width:100%}}
+</style>
+</head>
+<body><div class="shell">
+<div id="loginView" class="login">
+  <div class="top" style="border-radius:24px;margin-bottom:14px">
+    <div class="brand">combinado<span>.</span></div><div class="eyebrow" style="margin-top:24px">Família • Estudos • Responsabilidades</div>
+    <h1>O combinado fica claro.</h1><p>Estudo, tarefas e lazer num só lugar.</p>
+  </div>
+  <div class="card">
+    <h2>Entrar na área da família</h2>
+    <p class="muted small">Escolha seu perfil e informe o PIN.</p>
+    <div class="field"><label for="profile">Perfil</label><select id="profile"></select></div>
+    <div class="field"><label for="pin">PIN de acesso</label><input id="pin" type="password" inputmode="numeric" maxlength="8" placeholder="PIN de demonstração"></div>
+    <button style="width:100%" onclick="login()">Entrar</button>
+    <p class="tiny" style="margin-top:14px">Demonstração: pais usam PIN 1234, filhos PIN 1111 e administrador PIN 9999. Esta versão salva dados apenas neste navegador.</p>
+    <div id="loginError" class="notice red hidden" style="margin-top:12px">PIN incorreto. Tente novamente.</div>
+  </div>
+</div>
+<div id="appView" class="hidden">
+  <header class="top">
+    <div class="topline"><div class="brand">combinado<span>.</span></div><button class="nav" style="margin:0;padding:8px 12px" onclick="logout()">Sair ↗</button></div>
+    <div class="eyebrow" id="roleLabel" style="margin-top:22px">Área da família</div><h1 id="welcome">Olá!</h1><p id="subtitle">Cada esforço conta.</p>
+    <nav class="nav" id="nav"></nav>
+  </header>
+  <main class="content" id="main"></main>
+  <div class="foot">Acordo familiar de uso do computador • Regras baseadas no contrato da família</div>
+</div></div>
+<script>
+const KEY='combinado_family_v1';
+const initial={
+ users:[
+  {id:'parent1',name:'Mãe / Responsável',role:'parent',pin:'1234'},
+  {id:'parent2',name:'Pai / Responsável',role:'parent',pin:'1234'},
+  {id:'admin1',name:'Administrador',role:'admin',pin:'9999'},
+  {id:'child1',name:'Filho(a) 1',role:'child',pin:'1111'},
+  {id:'child2',name:'Filho(a) 2',role:'child',pin:'1111'}
+ ],
+ tasks:[], sessions:[], credits:{child1:0,child2:0}, bonuses:{child1:{school:0,home:0},child2:{school:0,home:0}},
+ settings:{examWeek:false,suspensions:{},disciplinaryLocks:{},weekendApproved:{},maxDailyMinutes:120},
+ activeSessions:{}, logs:[]
+};
+let db=load(), me=null, tab='home', tick=null;
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||structuredClone(initial)}catch(e){return structuredClone(initial)}}
+function save(){localStorage.setItem(KEY,JSON.stringify(db))}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function mins(n){n=Math.max(0,Math.floor(n||0));return `${Math.floor(n/60)}h ${String(n%60).padStart(2,'0')}min`}
+function fmt(sec){sec=Math.max(0,Math.floor(sec));return `${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`}
+function today(){return new Date().toISOString().slice(0,10)}
+function isWeekend(){let d=new Date().getDay();return d===0||d===6}
+function kids(){return db.users.filter(u=>u.role==='child')}
+function myTasks(){return db.tasks.filter(t=>t.childId===me.id&&t.date===today())}
+function taskIcon(title){
+ const s=String(title||'').toLowerCase();
+ if(s.includes('louça')||s.includes('loucas')||s.includes('lavar a lou'))return '🧽';
+ if(s.includes('lixo'))return '🗑️';
+ if(s.includes('cama'))return '🛏️';
+ if(s.includes('tênis')||s.includes('tenis')||s.includes('sapato'))return '👟';
+ if(s.includes('prato')||s.includes('mesa')||s.includes('refeição')||s.includes('refeicao'))return '🍽️';
+ if(s.includes('quarto')||s.includes('organizar'))return '🧸';
+ if(s.includes('varrer')||s.includes('limpar casa')||s.includes('casa'))return '🧹';
+ if(s.includes('estudo')||s.includes('escolar')||s.includes('lição')||s.includes('licao'))return '📚';
+ return '⭐';
+}
+const TASK_PRESETS=[
+ {title:'Lavar as louças',description:'Lavar e guardar as louças, deixando a pia organizada.',icon:'🧽'},
+ {title:'Levar o lixo para fora',description:'Fechar o saco e levar ao local correto, com autorização de um responsável.',icon:'🗑️'},
+ {title:'Arrumar a cama',description:'Esticar o lençol, organizar travesseiros e cobertas.',icon:'🛏️'},
+ {title:'Limpar os tênis',description:'Escovar e limpar os tênis conforme orientação dos responsáveis.',icon:'👟'},
+ {title:'Organizar e limpar a casa',description:'Guardar objetos e ajudar na limpeza combinada para o dia.',icon:'🧹'},
+ {title:'Retirar os pratos da mesa',description:'Levar pratos e talheres à pia após a refeição.',icon:'🍽️'},
+ {title:'Organizar o quarto',description:'Guardar brinquedos, roupas e objetos no lugar.',icon:'🧸'}
+];
+function chooseTaskPreset(){
+ const v=document.getElementById('taskPreset')?.value;
+ const p=TASK_PRESETS.find(x=>x.title===v);
+ if(!p)return;
+ document.getElementById('taskTitle').value=p.title;
+ document.getElementById('taskDesc').value=p.description;
+ document.getElementById('taskType').value='home';
+}
+function balance(id){return (db.credits[id]||0)+(db.bonuses[id]?.school||0)+(db.bonuses[id]?.home||0)}
+function login(){let u=db.users.find(x=>x.id===document.getElementById('profile').value);if(!u||u.pin!==document.getElementById('pin').value){document.getElementById('loginError').classList.remove('hidden');return}me=u;tab='home';document.getElementById('loginView').classList.add('hidden');document.getElementById('appView').classList.remove('hidden');render();if(tick)clearInterval(tick);tick=setInterval(()=>{if(me&&db.activeSessions[me.id]){let el=document.getElementById('timerDisplay');if(el)el.textContent=fmt(Math.floor((Date.now()-db.activeSessions[me.id].start)/1000)+db.activeSessions[me.id].elapsed)}} ,1000)}
+function logout(){me=null;document.getElementById('appView').classList.add('hidden');document.getElementById('loginView').classList.remove('hidden');document.getElementById('pin').value=''}
+function renderLoginOptions(){document.getElementById('profile').innerHTML=db.users.map(u=>`<option value="${u.id}">${esc(u.name)} — ${u.role==='admin'?'Administrador':u.role==='parent'?'Pais/responsáveis':'Filho(a)'}</option>`).join('')}
+function render(){if(!me)return;document.getElementById('roleLabel').textContent=me.role==='admin'?'ÁREA DO ADMINISTRADOR':me.role==='parent'?'ÁREA DOS PAIS / RESPONSÁVEIS':'ÁREA DO(A) FILHO(A)';document.getElementById('welcome').textContent=`Olá, ${me.name.split(' ')[0]}!`;document.getElementById('subtitle').textContent=me.role==='parent'?'Acompanhe, cadastre tarefas e valide atividades.':'Estude, marque suas tarefas e acompanhe seus créditos.';
+let tabs=me.role==='admin'?[['home','Painel'],['profiles','Gerenciar perfis'],['tasks','Tarefas'],['validate','Validar'],['rules','Regras']]:me.role==='parent'?[['home','Painel'],['tasks','Tarefas'],['validate','Validar'],['rules','Regras']]:[['home','Meu resumo'],['study','Estudar'],['tasks','Minhas tarefas'],['credits','Meus créditos']];
+document.getElementById('nav').innerHTML=tabs.map(([id,label])=>`<button class="${tab===id?'active':''}" onclick="tab='${id}';render()">${label}</button>`).join('');
+let views={home:me.role!=='child'?parentHome:childHome,profiles:adminProfiles,tasks:me.role!=='child'?parentTasks:childTasks,validate:parentValidate,rules:parentRules,study:studyView,credits:creditsView};document.getElementById('main').innerHTML=(views[tab]||childHome)()}
+
+function adminProfiles(){
+ if(me.role!=='admin') return '<div class="notice red">Acesso restrito ao administrador.</div>';
+ return `<div class="grid">
+ <div class="card"><h2>Criar perfil</h2>
+ <div class="field"><label>Nome</label><input id="newUserName" placeholder="Nome do usuário"></div>
+ <div class="field"><label>Tipo de perfil</label><select id="newUserRole"><option value="parent">Pai / responsável</option><option value="child">Filho(a)</option><option value="admin">Administrador</option></select></div>
+ <div class="field"><label>PIN individual (4 a 8 dígitos)</label><input id="newUserPin" type="password" inputmode="numeric" maxlength="8" placeholder="Defina um PIN"></div>
+ <button class="light" onclick="createUser()">Criar perfil</button>
+ </div>
+ <div class="card"><h2>Permissões do administrador</h2><p class="muted small">O administrador pode criar, editar e excluir perfis, alterar PINs e definir o tipo de acesso. Pais/responsáveis mantêm as funções de tarefas, validações e regras familiares.</p><div class="notice">Proteja o PIN de administrador e não o compartilhe com as crianças.</div></div>
+ </div>
+ <div class="sectionhead"><h2>Perfis cadastrados</h2></div>
+ <div class="card">${db.users.map(u=>`<div class="listitem">
+ <div class="row mobile-stack"><div><b>${esc(u.name)}</b><div class="taskmeta">${u.role==='admin'?'Administrador':u.role==='parent'?'Pai / responsável':'Filho(a)'} • PIN ${'•'.repeat(Math.max(4,Math.min(8,u.pin.length)))}</div></div>
+ <div class="actions" style="margin:0"><button class="secondary" onclick="editUser('${u.id}')">Editar</button><button class="danger" onclick="deleteUser('${u.id}')" ${u.id===me.id?'disabled':''}>Excluir</button></div></div>
+ </div>`).join('')}</div>`;
+}
+function createUser(){
+ if(me.role!=='admin')return;
+ const name=document.getElementById('newUserName').value.trim();
+ const role=document.getElementById('newUserRole').value;
+ const pin=document.getElementById('newUserPin').value.trim();
+ if(!name){alert('Informe o nome do usuário.');return}
+ if(!/^\d{4,8}$/.test(pin)){alert('O PIN deve ter de 4 a 8 dígitos.');return}
+ if(db.users.some(u=>u.pin===pin)){if(!confirm('Este PIN já é usado por outro perfil. Deseja utilizá-lo mesmo assim?'))return}
+ const id='user_'+(crypto.randomUUID?crypto.randomUUID():Date.now().toString(36));
+ db.users.push({id,name,role,pin});
+ if(role==='child'){db.credits[id]=0;db.bonuses[id]={school:0,home:0}}
+ save();renderLoginOptions();alert('Perfil criado com sucesso.');render();
+}
+function editUser(id){
+ if(me.role!=='admin')return;
+ const u=db.users.find(x=>x.id===id);if(!u)return;
+ const name=prompt('Nome do usuário:',u.name);if(name===null)return;
+ const role=prompt('Tipo: admin, parent ou child',u.role);if(role===null)return;
+ if(!['admin','parent','child'].includes(role)){alert('Tipo inválido.');return}
+ const pin=prompt('Novo PIN de 4 a 8 dígitos:',u.pin);if(pin===null)return;
+ if(!/^\d{4,8}$/.test(pin)){alert('O PIN deve ter de 4 a 8 dígitos.');return}
+ if(!name.trim()){alert('O nome não pode ficar vazio.');return}
+ if(u.role==='child'&&role!=='child'){delete db.credits[id];delete db.bonuses[id];delete db.activeSessions[id]}
+ if(u.role!=='child'&&role==='child'){db.credits[id]=0;db.bonuses[id]={school:0,home:0}}
+ u.name=name.trim();u.role=role;u.pin=pin;
+ save();renderLoginOptions();render();alert('Perfil atualizado.');
+}
+function deleteUser(id){
+ if(me.role!=='admin')return;
+ if(id===me.id){alert('Você não pode excluir o perfil administrador que está usando.');return}
+ const u=db.users.find(x=>x.id===id);if(!u)return;
+ if(u.role==='admin'&&db.users.filter(x=>x.role==='admin').length<=1){alert('Mantenha pelo menos um administrador.');return}
+ if(!confirm(`Excluir o perfil "${u.name}"? Esta ação não pode ser desfeita.`))return;
+ db.users=db.users.filter(x=>x.id!==id);
+ delete db.credits[id];delete db.bonuses[id];delete db.activeSessions[id];
+ db.tasks=db.tasks.filter(t=>t.childId!==id);db.sessions=db.sessions.filter(s=>s.childId!==id);db.logs=db.logs.filter(l=>l.childId!==id);
+ save();renderLoginOptions();render();
+}
+
+function parentHome(){return `<div class="grid"><div class="card"><div class="eyebrow muted">Tempo de lazer disponível</div><div class="stat">${mins(kids().reduce((s,k)=>s+balance(k.id),0))}</div><div class="statlabel">saldo somado dos filhos</div></div><div class="card"><div class="eyebrow muted">Pendências de validação</div><div class="stat">${db.tasks.filter(t=>t.status==='submitted').length}</div><div class="statlabel">tarefas aguardando conferência</div></div></div><div class="sectionhead"><h2>Resumo por filho</h2><button class="light" onclick="tab='tasks';render()">+ Cadastrar tarefa</button></div><div class="grid">${kids().map(k=>`<div class="card"><div class="row"><h2>${esc(k.name)}</h2><span class="pill">${db.activeSessions[k.id]?'Estudando':'Disponível'}</span></div><div class="balance"><div><div class="stat">${mins(db.credits[k.id]||0)}</div><div class="statlabel">Estudo convertido</div></div><div><div class="stat">${mins(db.bonuses[k.id]?.home||0)}</div><div class="statlabel">Tarefas domésticas</div></div><div><div class="stat">${mins(balance(k.id))}</div><div class="statlabel">Total de lazer</div></div></div><p class="small muted">${db.tasks.filter(t=>t.childId===k.id&&t.date===today()&&t.status==='submitted').length} tarefa(s) aguardando validação hoje.</p></div>`).join('')}</div><div class="sectionhead"><h2>Regras ativas</h2></div><div class="card stack"><div class="row"><span>Semana de provas</span><span class="pill ${db.settings.examWeek?'red':''}">${db.settings.examWeek?'Lazer bloqueado':'Não ativada'}</span></div><div class="row"><span>Suspensão recreativa</span><span class="pill">${kids().filter(k=>db.settings.suspensions[k.id]).length} filho(s)</span></div><div class="row"><span>Conversão de estudo</span><b>50 min = 60 min</b></div></div>`}
+function childHome(){let id=me.id, active=db.activeSessions[id], completed=myTasks().filter(t=>t.status==='approved').length,total=myTasks().length;return `<div class="grid"><div class="card"><div class="eyebrow muted">Crédito recreativo</div><div class="stat">${mins(balance(id))}</div><div class="statlabel">tempo disponível para lazer</div></div><div class="card"><div class="eyebrow muted">Tarefas de hoje</div><div class="stat">${completed}/${total}</div><div class="statlabel">atividades validadas pelos responsáveis</div></div></div><div class="card" style="margin-top:14px"><div class="row"><h2>Seu próximo objetivo</h2><span class="pill">${active?'Cronômetro ativo':'50 min de estudo'}</span></div><p class="muted">${active?'Continue concentrado. Ao parar, encerre o cronômetro para registrar o tempo.':'Complete 50 minutos ininterruptos para ganhar 60 minutos de lazer.'}</p><div class="actions"><button class="light" onclick="tab='study';render()"> ${active?'Ver cronômetro':'Começar a estudar'} </button><button class="secondary" onclick="tab='tasks';render()">Ver tarefas</button></div></div><div class="notice" style="margin-top:14px">O uso para estudos permanece liberado. O saldo exibido é para lazer/jogos e não substitui a autorização dos responsáveis.</div>${db.settings.examWeek?'<div class="notice red" style="margin-top:12px">Semana de provas ativa: lazer e jogos estão bloqueados. O estudo continua liberado.</div>':''}${db.settings.suspensions[id]?'<div class="notice red" style="margin-top:12px">Seu uso recreativo está suspenso pelos responsáveis. O acesso para estudos continua liberado.</div>':''}${db.settings.disciplinaryLocks[id]?'<div class="notice red" style="margin-top:12px"><b>Sistema recreativo bloqueado.</b> Motivo: '+esc(db.settings.disciplinaryLocks[id].reason)+'. Seus benefícios foram zerados. Aguarde a liberação de um responsável. O uso para estudos continua liberado.</div>':''}`}
+function studyView(){let a=db.activeSessions[me.id];let seconds=a?Math.floor((Date.now()-a.start)/1000)+a.elapsed:0;return `<div class="card"><div class="eyebrow muted" style="text-align:center">Cronômetro de estudos</div>${a?`<div class="notice"><b>Disciplina:</b> ${esc(a.subject)}<br>Sessão iniciada às ${new Date(a.startedAt).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}. Não saia da conta durante o estudo.</div>`:`<div class="field"><label for="studySubject">Matéria ou disciplina que será estudada</label><input id="studySubject" maxlength="120" placeholder="Ex.: Matemática — equações do 2º grau" autocomplete="off"></div>`}<div id="timerDisplay" class="timer">${fmt(seconds)}</div><div class="progress"><div style="width:${Math.min(100,seconds/3000*100)}%"></div></div><p class="muted small" style="text-align:center">Meta: 50 minutos ininterruptos • cada ciclo completo gera 60 minutos de lazer</p>${a?`<div class="field"><label for="studySummary">Resumo do que foi estudado (obrigatório, máximo de 1.000 caracteres)</label><textarea id="studySummary" maxlength="1000" oninput="document.getElementById('summaryCount').textContent=this.value.length" placeholder="Explique, com suas palavras, o conteúdo estudado e o que aprendeu."></textarea><div class="tiny"><span id="summaryCount">0</span>/1000 caracteres</div></div><div class="actions"><button class="danger" onclick="stopStudy()">Finalizar e registrar estudo</button></div>`:`<div class="actions"><button class="light" onclick="startStudy()">▶ Iniciar estudo</button></div>`}</div><div class="card" style="margin-top:14px"><h2>Como funciona</h2><p>1. Antes de iniciar, informe a matéria ou disciplina.</p><p>2. Ao finalizar, escreva um resumo com até 1.000 caracteres.</p><p>3. Uma sessão de pelo menos 50 minutos completos gera 60 minutos de lazer. O tempo restante não é convertido proporcionalmente.</p><p class="small muted">Interrupções necessárias podem ser avaliadas pelos responsáveis, conforme o contrato familiar.</p></div>`}
+function childTasks(){let ts=myTasks();return `<div class="row mobile-stack"><div><h2>Minhas tarefas de hoje</h2><p class="muted small">Marque como concluída quando terminar. Os responsáveis farão a validação.</p></div></div><div class="card">${ts.length?ts.map(t=>`<div class="task"><div class="taskmain"><div class="tasktitle"><span aria-hidden="true" style="font-size:24px;vertical-align:middle;margin-right:7px">${taskIcon(t.title)}</span>${esc(t.title)}</div><div class="taskmeta">${esc(t.description||'')} • ${t.type==='home'?'Responsabilidade doméstica':'Outra tarefa'}</div><div style="margin-top:7px"><span class="pill ${t.status==='approved'?'':t.status==='submitted'?'warn':''}">${t.status==='approved'?'Validada':t.status==='submitted'?'Aguardando validação':'Pendente'}</span></div></div>${t.status==='pending'?`<button class="secondary" onclick="submitTask('${t.id}')">Concluí</button>`:''}</div>`).join(''):'<p class="muted">Nenhuma tarefa cadastrada para hoje. Confira novamente com seus responsáveis.</p>'}</div>`}
+function parentTasks(){return `<div class="grid"><div class="card"><h2>🧩 Cadastrar tarefa diária</h2><div class="field"><label>Escolher tarefa ilustrada</label><select id="taskPreset" onchange="chooseTaskPreset()"><option value="">Escolha uma tarefa pronta (opcional)</option>${TASK_PRESETS.map(p=>`<option value="${esc(p.title)}">${p.icon} ${esc(p.title)}</option>`).join('')}</select></div><div class="field"><label>Nome da tarefa</label><input id="taskTitle" placeholder="Ex.: Arrumar a cama"></div><div class="field"><label>Filho(a)</label><select id="taskChild">${kids().map(k=>`<option value="${k.id}">${esc(k.name)}</option>`).join('')}</select></div><div class="field"><label>Categoria</label><select id="taskType"><option value="home">Responsabilidade doméstica</option><option value="school">Escolar</option><option value="other">Outra responsabilidade</option></select></div><div class="field"><label>Descrição / critério de conclusão</label><input id="taskDesc" placeholder="Ex.: deixar pia e bancada limpas"></div><div class="field"><label>Repetição</label><select id="taskRepeat"><option value="today">Somente hoje</option><option value="daily">Todos os dias (criar próximos 30 dias)</option></select></div><button class="light" onclick="addTask()">Cadastrar tarefa</button></div><div class="card"><h2>Controles do contrato</h2><div class="field"><label>Semana de provas</label><select id="examToggle" onchange="setExam(this.value)"><option value="false" ${!db.settings.examWeek?'selected':''}>Não — lazer conforme regras</option><option value="true" ${db.settings.examWeek?'selected':''}>Sim — bloquear lazer/jogos</option></select></div><div class="field"><label>Aplicar suspensão recreativa</label><select id="suspendChild">${kids().map(k=>`<option value="${k.id}">${esc(k.name)}</option>`).join('')}</select></div><div class="field"><label>Motivo / observação</label><input id="suspendReason" placeholder="Motivo e condição para retomada"></div><div class="actions"><button class="danger" onclick="suspend(true)">Suspender lazer</button><button class="secondary" onclick="suspend(false)">Retomar lazer</button></div><div class="divider"></div><h3>Penalidades: zerar benefícios</h3><p class="small muted">Selecione o filho e aplique a regra correspondente. Todos os créditos de lazer serão zerados e o sistema recreativo ficará bloqueado até um responsável liberar.</p><div class="actions"><button class="danger" onclick="applyDiscipline('sibling_fight')">Briga com irmão — zerar benefícios</button><button class="danger" onclick="applyDiscipline('disrespect')">Desrespeito aos pais/responsáveis — zerar benefícios</button></div><div class="actions"><button class="light" onclick="releaseDiscipline()">Liberar sistema recreativo</button></div><p class="small muted">O bloqueio recreativo nunca bloqueia o uso para atividades educacionais.</p></div></div><div class="sectionhead"><h2>Tarefas cadastradas</h2></div><div class="card">${db.tasks.filter(t=>t.date>=today()).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,60).map(t=>`<div class="listitem"><div class="row"><div><b><span aria-hidden="true" style="font-size:22px;margin-right:6px">${taskIcon(t.title)}</span>${esc(t.title)}</b><div class="taskmeta">${esc(db.users.find(u=>u.id===t.childId)?.name||'')} • ${t.date} • ${t.type==='home'?'Doméstica':t.type==='school'?'Escolar':'Outra'}</div></div><span class="pill ${t.status==='approved'?'':t.status==='submitted'?'warn':''}">${t.status==='approved'?'Validada':t.status==='submitted'?'Aguardando':'Pendente'}</span></div></div>`).join('')||'<p class="muted">Nenhuma tarefa futura cadastrada.</p>'}</div>`}
+function parentValidate(){let pending=db.tasks.filter(t=>t.status==='submitted');return `<h2>Validar atividades</h2><p class="muted small">Confira a tarefa antes de aprovar ou devolver para correção.</p><div class="card">${pending.length?pending.map(t=>`<div class="listitem"><div class="row mobile-stack"><div><b><span aria-hidden="true" style="font-size:22px;margin-right:6px">${taskIcon(t.title)}</span>${esc(t.title)}</b><div class="taskmeta">${esc(db.users.find(u=>u.id===t.childId)?.name||'')} • ${t.date} • ${esc(t.description||'')}</div></div><div class="actions" style="margin:0"><button class="light" onclick="validateTask('${t.id}',true)">Aprovar</button><button class="secondary" onclick="validateTask('${t.id}',false)">Reabrir</button></div></div></div>`).join(''):'<p class="muted">Não há atividades aguardando validação.</p>'}</div><div class="sectionhead"><h2>Registros recentes de estudo</h2></div><div class="card">${db.sessions.slice().sort((a,b)=>b.at-a.at).slice(0,20).map(s=>`<div class="listitem"><b>${esc(db.users.find(u=>u.id===s.childId)?.name||'Filho(a)')} — ${esc(s.subject||'Disciplina não informada')}</b><div class="taskmeta">${new Date(s.at).toLocaleString('pt-BR')} • ${Math.floor(s.seconds/60)} min estudados • crédito: ${mins(s.credit||0)}</div><p class="small" style="white-space:pre-wrap">${esc(s.summary||'Sem resumo registrado.')}</p></div>`).join('')||'<p class="muted">Ainda não há sessões de estudo registradas.</p>'}</div><div class="sectionhead"><h2>Bonificações do contrato</h2></div><div class="card"><p class="small muted">As tarefas domésticas geram a bonificação contratual de 3 horas após o período de apuração e somente se todas as tarefas atribuídas forem cumpridas integralmente. O controle exige confirmação dos responsáveis.</p>${kids().map(k=>`<div class="listitem"><div class="row"><div><b>${esc(k.name)}</b><div class="taskmeta">Bonificação doméstica atual: ${mins(db.bonuses[k.id]?.home||0)}</div></div><button class="secondary" onclick="grantHome('${k.id}')">Conceder +3h</button></div></div>`).join('')}</div><div class="card" style="margin-top:14px"><h3>Bonificação por boletim semestral</h3><p class="small muted">Conforme cláusula 6ª: todas as disciplinas devem ter nota superior a 7,0. Conceder 5 horas e definir validade até o próximo boletim.</p>${kids().map(k=>`<div class="listitem"><div class="row"><b>${esc(k.name)}</b><button class="secondary" onclick="grantSchool('${k.id}')">Conceder +5h</button></div></div>`).join('')}</div>`}
+function parentRules(){return `<h2>Regras configuradas</h2><div class="card stack"><div><b>Estudos</b><p class="muted small">Uso educacional totalmente liberado, sem limite de tempo e sem necessidade de compensação por tarefas.</p></div><div><b>Conversão para lazer</b><p class="muted small">50 minutos ininterruptos de estudo concluídos = 60 minutos de lazer. O saldo é creditado em blocos completos.</p></div><div><b>Semana de provas</b><p class="muted small">Lazer/jogos bloqueados; o período não gera créditos retroativos, salvo autorização expressa.</p></div><div><b>Fins de semana e feriados</b><p class="muted small">O contrato exige trabalhos escolares concluídos, bom comportamento na semana, tarefas domésticas cumpridas e ausência de suspensão. A aprovação é dos responsáveis.</p></div><div><b>Bonificações</b><p class="muted small">Boletim: +5h se todas as notas forem superiores a 7,0. Tarefas domésticas: +3h após apuração integral. São saldos separados do crédito por estudo.</p></div><div><b>Suspensão recreativa</b><p class="muted small">Pode ser aplicada pelos responsáveis por período definido ou indeterminado, com critérios de retomada. Nunca impede estudo.</p></div><div><b>Penalidades com zeragem de benefícios</b><p class="muted small">Briga com irmão ou desrespeito aos pais/responsáveis: zerar todos os créditos e bonificações de lazer e bloquear o sistema recreativo até liberação expressa de um responsável. O acesso para estudos permanece liberado.</p></div></div><div class="notice" style="margin-top:14px">Nota de implementação: a validação de tarefas e a autorização para fins de semana permanecem decisões dos responsáveis; o app apenas registra e aplica as regras configuradas.</div>`}
+function creditsView(){let id=me.id;return `<h2>Meus créditos de lazer</h2><div class="grid"><div class="card"><div class="stat">${mins(db.credits[id]||0)}</div><div class="statlabel">Estudos (50 min → 60 min)</div></div><div class="card"><div class="stat">${mins(db.bonuses[id]?.home||0)}</div><div class="statlabel">Bonificação doméstica</div></div><div class="card"><div class="stat">${mins(db.bonuses[id]?.school||0)}</div><div class="statlabel">Bonificação escolar</div></div><div class="card"><div class="stat">${mins(balance(id))}</div><div class="statlabel">Total registrado</div></div></div><div class="card" style="margin-top:14px"><h2>Histórico recente</h2>${db.logs.filter(l=>l.childId===id).slice(-20).reverse().map(l=>`<div class="listitem"><div class="row"><span>${esc(l.text)}</span><span class="tiny">${new Date(l.at).toLocaleDateString('pt-BR')}</span></div></div>`).join('')||'<p class="muted">Ainda não há registros.</p>'}</div>`}
+function startStudy(){if(db.activeSessions[me.id])return;const field=document.getElementById('studySubject');const subject=(field?.value||'').trim();if(!subject){alert('Informe a matéria ou disciplina antes de iniciar os estudos.');field?.focus();return}db.activeSessions[me.id]={start:Date.now(),startedAt:Date.now(),elapsed:0,subject};save();render()}
+function stopStudy(){let a=db.activeSessions[me.id];if(!a)return;const summary=(document.getElementById('studySummary')?.value||'').trim();if(!summary){alert('Escreva um resumo do que foi estudado antes de finalizar.');document.getElementById('studySummary')?.focus();return}if(summary.length>1000){alert('O resumo deve ter no máximo 1.000 caracteres.');return}let seconds=Math.floor((Date.now()-a.start)/1000)+a.elapsed;let whole=Math.floor(seconds/3000);let credit=whole*60;const locked=!!(db.settings.disciplinaryLocks&&db.settings.disciplinaryLocks[me.id]);if(locked)credit=0;db.sessions.push({id:crypto.randomUUID(),childId:me.id,subject:a.subject,summary,seconds,at:Date.now(),credit});log(me.id,`Estudo finalizado — disciplina: ${a.subject}. Resumo: ${summary}`);if(locked){log(me.id,`Estudo registrado durante bloqueio disciplinar: ${Math.floor(seconds/60)} min; sem geração de benefícios até liberação.`)}else if(credit){db.credits[me.id]=(db.credits[me.id]||0)+credit;log(me.id,`Estudo registrado: ${Math.floor(seconds/60)} min; crédito +${credit} min.`)}else{log(me.id,`Sessão de estudo registrada: ${Math.floor(seconds/60)} min; sem ciclo completo de 50 min.`)}delete db.activeSessions[me.id];save();alert(locked?`Estudo registrado (${Math.floor(seconds/60)} min). O sistema de benefícios está bloqueado até liberação dos responsáveis.`:credit?`Sessão registrada! Crédito adquirido: ${mins(credit)}.`:`Sessão registrada (${Math.floor(seconds/60)} min). É necessário completar 50 minutos para gerar crédito.`);render()}
+function addTask(){let title=document.getElementById('taskTitle').value.trim();if(!title){alert('Informe o nome da tarefa.');return}let childId=document.getElementById('taskChild').value,type=document.getElementById('taskType').value,description=document.getElementById('taskDesc').value.trim(),repeat=document.getElementById('taskRepeat').value;let dates=[today()];if(repeat==='daily'){dates=[];for(let i=0;i<30;i++){let d=new Date();d.setDate(d.getDate()+i);dates.push(d.toISOString().slice(0,10))}}dates.forEach(date=>db.tasks.push({id:crypto.randomUUID(),title,childId,type,description,date,status:'pending',createdBy:me.id}));save();alert(`Tarefa cadastrada para ${dates.length} dia(s).`);render()}
+function submitTask(id){let t=db.tasks.find(t=>t.id===id);if(t){t.status='submitted';t.submittedAt=Date.now();log(me.id,`Tarefa enviada para validação: ${t.title}`);save();render()}}
+function validateTask(id,ok){let t=db.tasks.find(t=>t.id===id);if(!t)return;t.status=ok?'approved':'pending';t.validatedAt=Date.now();t.validatedBy=me.id;if(ok)log(t.childId,`Tarefa validada: ${t.title}`);save();render()}
+function log(childId,text){db.logs.push({childId,text,at:Date.now()})}
+function grantHome(id){if(!confirm('Confirmar que todas as responsabilidades domésticas do período foram cumpridas integralmente?'))return;db.bonuses[id].home=(db.bonuses[id].home||0)+180;log(id,'Bonificação doméstica concedida: +3 horas.');save();render()}
+function grantSchool(id){if(!confirm('Confirmar boletim semestral com nota superior a 7,0 em TODAS as disciplinas?'))return;db.bonuses[id].school=(db.bonuses[id].school||0)+300;log(id,'Bonificação por desempenho escolar concedida: +5 horas.');save();render()}
+function setExam(v){db.settings.examWeek=v==='true';save();render()}
+function applyDiscipline(reasonCode){
+ if(me.role!=='parent'&&me.role!=='admin'){alert('Apenas pais/responsáveis ou administrador podem aplicar esta penalidade.');return}
+ const id=document.getElementById('suspendChild').value;
+ const reason=reasonCode==='sibling_fight'?'Briga com irmão':'Desrespeito aos pais ou responsáveis';
+ if(!confirm(`Confirmar a penalidade "${reason}"? Todos os benefícios de lazer serão zerados e o sistema recreativo ficará bloqueado até liberação de um responsável.`))return;
+ db.credits[id]=0;
+ db.bonuses[id]={school:0,home:0};
+ db.settings.disciplinaryLocks=db.settings.disciplinaryLocks||{};
+ db.settings.disciplinaryLocks[id]={reason,at:Date.now(),appliedBy:me.id};
+ log(id,`Penalidade aplicada: ${reason}. Benefícios de lazer zerados; sistema bloqueado até liberação do responsável.`);
+ save();render();
+}
+function releaseDiscipline(){
+ if(me.role!=='parent'&&me.role!=='admin'){alert('Apenas pais/responsáveis ou administrador podem liberar o sistema.');return}
+ const id=document.getElementById('suspendChild').value;
+ const lock=db.settings.disciplinaryLocks&&db.settings.disciplinaryLocks[id];
+ if(!lock){alert('Este perfil não possui bloqueio disciplinar ativo.');return}
+ if(!confirm(`Liberar o sistema recreativo de ${db.users.find(u=>u.id===id)?.name||'este perfil'}? Os benefícios anteriores continuam zerados.`))return;
+ delete db.settings.disciplinaryLocks[id];
+ log(id,'Sistema recreativo liberado pelo responsável. Os benefícios zerados não foram restaurados.');
+ save();render();
+}
+
+function suspend(v){let id=document.getElementById('suspendChild').value,reason=document.getElementById('suspendReason').value.trim();if(v&&!reason){alert('Informe o motivo e, se possível, a condição para retomada.');return}db.settings.suspensions[id]=v?{reason,at:Date.now()}:null;if(!v)delete db.settings.suspensions[id];log(id,v?`Suspensão recreativa: ${reason}`:'Suspensão recreativa encerrada pelos responsáveis.');save();render()}
+renderLoginOptions();
+</script></body></html>
